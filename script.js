@@ -32,6 +32,11 @@ button.addEventListener("click", () => {
     while (container.hasChildNodes()){
         container.removeChild(container.firstChild);
     }
-    create_grid(input.value);
+    if(input.value <=100)
+        create_grid(input.value);
+    else{ 
+        alert("limita este de 100");
+        create_grid(5);
+    }
     
 })
