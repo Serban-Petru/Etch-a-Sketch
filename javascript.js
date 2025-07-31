@@ -1,4 +1,4 @@
-let sizeMatrix = 0;
+let sizeMatrix ;
 
 function sliderData(){
     const colectData = document.querySelector("#volume");
@@ -6,7 +6,7 @@ function sliderData(){
 
     colectData.addEventListener("click",() => {
     showData.textContent = colectData.value;
-   
+    sizeMatrix= colectData.value;
     removeMatrix();
     createMatrix(colectData.value);
 });
@@ -21,7 +21,7 @@ function createMatrix(size=2){
         const block = document.createElement("li");
         block.setAttribute("id",`array-${i}-${j}`);
         array.appendChild(block);
-        colorChange(block,"red");
+        colorChange(block);
     }
     }
 }
@@ -32,10 +32,27 @@ function removeMatrix(){
     }
 }
 
-function colorChange(block,color){
+
+function colorData(){
+    let colorChoise = document.querySelector("#color");
+    return  colorChoise.value
+}
+
+
+function colorChange(block){
     block.addEventListener("mouseenter",() => {
-        block.style.background = color;
+        colorData();
+        block.style.background = colorData();
     });
 }
+
+const tabula_rasa = document.querySelector("#clear");
+
+tabula_rasa.addEventListener("click",() =>{
+    removeMatrix();
+    createMatrix(sizeMatrix);
+});
+
+
 createMatrix();
 sliderData();

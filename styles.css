@@ -43,12 +43,38 @@ ul{
 .middleSection{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   background: wheat;
   padding: 50px;
+  gap:10px;
 }
 
 .slider{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.changeColor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background-color: lightpink;
+}
+
+.clear{
+  display: flex;
 }
